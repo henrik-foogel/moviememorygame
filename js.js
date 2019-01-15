@@ -10,3 +10,15 @@ function timerInterval () {
         };
     },1000);
 };
+
+// start game
+
+// shuffle cards
+
+// flip cards
+
+// checks if match
+
+// count points
+
+// go back
