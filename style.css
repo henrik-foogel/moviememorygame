@@ -3,6 +3,7 @@ body {
 }
 
 .card {
-    height: 14em;
+    height: 15em;
     width: 11em;
+    border-radius: 4px;
 }
