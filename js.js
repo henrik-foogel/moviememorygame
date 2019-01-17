@@ -4,6 +4,7 @@ var timer = 30;
 var card = document.querySelectorAll('.container');
 var isFlipped = false;
 var firstC, secondC; 
+var locked = false;
 
 function timerInterval () {
     timerInt = setInterval (() => {
@@ -21,6 +22,8 @@ function timerInterval () {
 // flip cards
 
 function cardFlipper () {
+    if (locked) return;
+    if(this === firstC) return;
     this.classList.add('flip');
 
     if(!isFlipped) {
@@ -30,7 +33,6 @@ function cardFlipper () {
     }
 
     secondC = this;
-    isFlipped = false;
 
     checkMatch();
 }
@@ -45,16 +47,25 @@ function checkMatch () {
 function cardsDisable () {
     firstC.removeEventListener('click', cardFlipper);
     secondC.removeEventListener('click', cardFlipper);
+    reset();
 }
 
 function notFlipped () {
+    locked = true;
     setTimeout(()=> {
         firstC.classList.remove('flip');
         secondC.classList.remove('flip');
+
+        reset();
     }, 1500);
 } 
 // count points
 
+// reset cards
+function reset() {
+    [isFlipped, locked] = [false, false];
+    [firstC, secondC] = [null, null];
+}
 // go back
 
 card.forEach(card => card.addEventListener('click', cardFlipper));
