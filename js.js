@@ -1,10 +1,9 @@
 var points = 0;
 var timerInt = '';
 var timer = 30;
-var card = document.querySelectorAll('.container');
+var cards = document.querySelectorAll('.container');
 var isFlipped = false;
 var firstC, secondC; 
-var locked = false;
 
 function timerInterval () {
     timerInt = setInterval (() => {
@@ -15,21 +14,16 @@ function timerInterval () {
     },1000);
 };
 
-// start game
-
 // shuffle cards
-
 (function shuffle () {
-    card.forEach(cardShuffle => {
+    cards.forEach(cardShuffle => {
         var randomPositions = Math.floor(Math.random() * 12);
         cardShuffle.style.order = randomPositions;
     });
 })();
 
 // flip cards
-
 function cardFlipper () {
-    if (locked) return;
     if(this === firstC) return;
     this.classList.add('flip');
 
@@ -40,39 +34,47 @@ function cardFlipper () {
     }
 
     secondC = this;
+    locked = true;
 
     checkMatch();
 }
 
 // checks if match
-
 function checkMatch () {
-    var isMatch = firstC.dataset.name === secondC.dataset.name;
-    isMatch ? cardsDisable() : notFlipped();
+
+    if(secondC.firstElementChild.id == firstC.firstElementChild.id) {
+        points++;
+        cardsDisable()
+    } else {
+        notFlipped()
+    }
 }
 
+// disable cards
 function cardsDisable () {
-    firstC.removeEventListener('click', cardFlipper);
-    secondC.removeEventListener('click', cardFlipper);
+    firstC.firstElementChild.removeEventListener('click', cardFlipper);
+    secondC.firstElementChild.removeEventListener('click', cardFlipper);
+    firstC.classList.add('disabled')
+    secondC.classList.add('disabled')
     reset();
 }
 
+// if not matched
 function notFlipped () {
-    locked = true;
     setTimeout(()=> {
         firstC.classList.remove('flip');
         secondC.classList.remove('flip');
-
         reset();
-    }, 1500);
+    }, 200);
 } 
-// count points
 
 // reset cards
 function reset() {
-    [isFlipped, locked] = [false, false];
-    [firstC, secondC] = [null, null];
+    //firstC.classList.remove('flip');
+    isFlipped = false;
+    firstC = null;
+    secondC = null;
 }
 // go back
 
-card.forEach(card => card.addEventListener('click', cardFlipper));
+cards.forEach(card => card.addEventListener('click', cardFlipper));
