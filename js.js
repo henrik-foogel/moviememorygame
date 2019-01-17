@@ -19,6 +19,13 @@ function timerInterval () {
 
 // shuffle cards
 
+(function shuffle () {
+    card.forEach(cardShuffle => {
+        var randomPositions = Math.floor(Math.random() * 12);
+        cardShuffle.style.order = randomPositions;
+    });
+})();
+
 // flip cards
 
 function cardFlipper () {
