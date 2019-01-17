@@ -1,6 +1,7 @@
 var points = 0;
 var timerInt = '';
 var timer = 30;
+var card = document.querySelectorAll('.container');
 
 function timerInterval () {
     timerInt = setInterval (() => {
@@ -16,6 +17,12 @@ function timerInterval () {
 // shuffle cards
 
 // flip cards
+
+function cardFlipper () {
+    this.classList.toggle('flip');
+}
+
+card.forEach(card => card.addEventListener('click', cardFlipper));
 
 // checks if match
 
