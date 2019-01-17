@@ -31,12 +31,30 @@ function cardFlipper () {
 
     secondC = this;
     isFlipped = false;
-}
 
-card.forEach(card => card.addEventListener('click', cardFlipper));
+    checkMatch();
+}
 
 // checks if match
 
+function checkMatch () {
+    var isMatch = firstC.dataset.name === secondC.dataset.name;
+    isMatch ? cardsDisable() : notFlipped();
+}
+
+function cardsDisable () {
+    firstC.removeEventListener('click', cardFlipper);
+    secondC.removeEventListener('click', cardFlipper);
+}
+
+function notFlipped () {
+    setTimeout(()=> {
+        firstC.classList.remove('flip');
+        secondC.classList.remove('flip');
+    }, 1500);
+} 
 // count points
 
 // go back
+
+card.forEach(card => card.addEventListener('click', cardFlipper));
