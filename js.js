@@ -46,7 +46,7 @@ function checkMatch () {
         points++;
         cardsDisable()
     } else {
-        notFlipped()
+        flippBack()
     }
 }
 
@@ -60,7 +60,7 @@ function cardsDisable () {
 }
 
 // if not matched
-function notFlipped () {
+function flippBack () {
     setTimeout(()=> {
         firstC.classList.remove('flip');
         secondC.classList.remove('flip');
