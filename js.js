@@ -1,18 +1,24 @@
 var points = 0;
 var timerInt = '';
-var timer = 30;
+var timer = 10;
 var cards = document.querySelectorAll('.container');
 var isFlipped = false;
 var firstC, secondC; 
 
-function timerInterval () {
+
+//countdown
+var countdown = document.getElementById('timer');
+
+countdown.textContent = timer;
+
     timerInt = setInterval (() => {
-        timer--;
+        timer = --timer;
+        countdown.textContent = timer;
         if(timer == 0) {
             clearInterval(timerInt);
+            document.getElementsByTagName('svg')[0].classList.add('disabled');
         };
     },1000);
-};
 
 // shuffle cards
 (function shuffle () {
