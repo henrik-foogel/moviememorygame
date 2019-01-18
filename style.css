@@ -10,6 +10,13 @@ body {
     display: flex;
 }
 
+.points {
+    color: white;
+    font-size: 4.7vw;
+    text-align: center;
+    font-family: 'Lobster';
+}
+
 #countdown {
     position: relative;
     margin: auto;

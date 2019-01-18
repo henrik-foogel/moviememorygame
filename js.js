@@ -50,6 +50,9 @@ function checkMatch () {
 
     if(secondC.firstElementChild.id == firstC.firstElementChild.id) {
         points++;
+        var score = document.getElementById("result");
+        score.innerHTML = points;
+
         cardsDisable()
     } else {
         flippBack()
