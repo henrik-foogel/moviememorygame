@@ -45,10 +45,10 @@ body {
     stroke-dasharray: 113px;
     stroke-dashoffset: 0px;
     stroke-linecap: round;
-    stroke-width: 2px;
+    stroke-width: 3px;
     stroke: white;
     fill: none;
-    animation: countdown 10s linear infinite forwards;
+    animation: countdown 30s linear infinite forwards;
   }
   
   @keyframes countdown {

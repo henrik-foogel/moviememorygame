@@ -1,10 +1,9 @@
 var points = 0;
 var timerInt = '';
-var timer = 10;
+var timer = 30;
 var cards = document.querySelectorAll('.container');
 var isFlipped = false;
 var firstC, secondC; 
-
 
 //countdown
 var countdown = document.getElementById('timer');
@@ -50,13 +49,32 @@ function checkMatch () {
 
     if(secondC.firstElementChild.id == firstC.firstElementChild.id) {
         points++;
-        var score = document.getElementById("result");
-        score.innerHTML = points;
-
+        if(points == 6 || timer == 0) {
+            stopGame()
+        } else {
+            var score = document.getElementById("result");
+            score.innerHTML = points;
+        }
         cardsDisable()
     } else {
         flippBack()
     }
+}
+
+// stop game
+function stopGame () {
+    document.getElementsByTagName('svg')[0].classList.add('disabled');
+    if(points == 6 && timer > 20) {
+        points = points+2;
+        clearInterval(timerInt);
+    } else if (points == 6 && timer > 10) {
+        points = points+1;
+        clearInterval(timerInt);
+    } else if (points == 6) {
+        clearInterval(timerInt);
+    }
+    var score = document.getElementById("result");
+    score.innerHTML = points;
 }
 
 // disable cards
