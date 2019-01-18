@@ -61,11 +61,14 @@ function cardsDisable () {
 
 // if not matched
 function flippBack () {
+    cards.forEach(card => card.removeEventListener('click', cardFlipper));
     setTimeout(()=> {
         firstC.classList.remove('flip');
         secondC.classList.remove('flip');
+        
+cards.forEach(card => card.addEventListener('click', cardFlipper));
         reset();
-    }, 200);
+    }, 700);
 } 
 
 // reset cards
