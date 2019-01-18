@@ -3,16 +3,19 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" /> 
         <title>Movie Memory Game - Game</title>
     </head>
     <body>
-        <div id="countdown">
-            <div id="timer"></div>
-            <svg>
-                <circle r="18" cx="20" cy="20"></circle>
-            </svg>
+        <div class="points-time">
+            <h2 class="points" id="result"></h2>
+            <div id="countdown">
+                <div id="timer"></div>
+                <svg>
+                    <circle r="18" cx="20" cy="20"></circle>
+                </svg>
+            </div>
         </div>
-        <h2 class="points" id="result"></h2>
         <section class="memory">
             <div class="container" >
                 <img id="thing" class="card front" alt="The Thing" src="images/Thething.jpeg">
@@ -63,6 +66,15 @@
                 <img class="card back" alt="Mem" src="images/movie-reel.png">
             </div>
         </section>
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Some text in the Modal..</p>
+            </div>
+          
+          </div>
         <script src="js.js"></script>
     </body>
 </html>

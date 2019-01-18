@@ -4,9 +4,12 @@ var timer = 30;
 var cards = document.querySelectorAll('.container');
 var isFlipped = false;
 var firstC, secondC; 
+var modal = document.getElementById('myModal');
 
 //countdown
 var countdown = document.getElementById('timer');
+var score = document.getElementById("result");
+score.innerHTML = points;
 
 countdown.textContent = timer;
 
@@ -73,9 +76,11 @@ function stopGame () {
     } else if (points == 6) {
         clearInterval(timerInt);
     }
+    modal.style.display = "block";
     var score = document.getElementById("result");
     score.innerHTML = points;
 }
+
 
 // disable cards
 function cardsDisable () {
