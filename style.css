@@ -107,31 +107,41 @@ body {
     transform: rotateY(180deg)
 }
 
-.header-text {
+h1 {
+    color: white; 
+    text-align: center;
+    position: absolute;
+    font-size: 5em;
+    font-family: 'Lobster', cursive;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.rules {
+    font-size: 2.1em;
     color: white;
     text-align: center;
     position: absolute;
-    font-size: 8.7vw;
-    top: 40%;
+    top: 80%;
+    left: 50%;
+    font-family: 'Lobster', cursive;
+    transform: translate(-50%, -50%);
+}
+
+a {
+    background-color: rgba(42, 196, 90); 
+    border-radius: 16px;
+    padding: 5px;
+    text-align: center;
+    position: absolute;
+    font-size: 2.8em;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Lobster', cursive;
 }
 
-.game-button {
-    background-color: rgba(42, 196, 90); 
-    border-radius: 16px;
-    margin-top: 25px;
-    padding: 5px;
-    text-align: center;
-    position: absolute;
-    font-size: 4.5vh;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-family: 'Lobster', cursive;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
 
 a:link {
     text-decoration: none;
