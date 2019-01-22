@@ -146,24 +146,26 @@ a:active {
   
   /* Modal Content */
   .modal-content {
-    background-color: #fefefe;
+    background-color: #724b86;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    color: rgba(42, 196, 90);
   }
   
   /* The Close Button */
   .close {
-    color: #aaaaaa;
+    color: rgba(42, 196, 90);
     float: right;
     font-size: 28px;
     font-weight: bold;
+    margin: 10px;
   }
   
   .close:hover,
   .close:focus {
-    color: #000;
+    color: rgba(60, 230, 130);
     text-decoration: none;
     cursor: pointer;
   }

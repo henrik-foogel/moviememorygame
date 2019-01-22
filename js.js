@@ -19,6 +19,7 @@ countdown.textContent = timer;
         if(timer == 0) {
             clearInterval(timerInt);
             document.getElementsByTagName('svg')[0].classList.add('disabled');
+            stopGame()
         };
     },1000);
 
@@ -76,6 +77,10 @@ function stopGame () {
     } else if (points == 6) {
         clearInterval(timerInt);
     }
+    document.getElementById('timer').innerHTML = '';
+    document.getElementById("result").style.color = "black";
+    document.getElementById("end-result").innerHTML = points;
+    document.getElementById("end-time").innerHTML = timer;
     modal.style.display = "block";
     var score = document.getElementById("result");
     score.innerHTML = points;
