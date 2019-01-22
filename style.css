@@ -87,15 +87,40 @@
       transform: scale(1);
       transform-style: preserve-3d;
       transition: transform .1s;
+
+    -ms-transform: transform .1s;
+    -webkit-transform: transform .1s;
+    -moz-transform: transform .1s;
+    -o-transform: transform .1s;
+
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
   }
   
   .container.flip {
       transform: rotateY(180deg);
+
+      -ms-transform: rotateY(180deg);
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+      -o-transform: rotateY(180deg);
   }
   
   .container:active {
       transform: scale(0.97);
       transition: transform .2s;
+      
+      -ms-transform: scale(0.97);
+      -webkit-transform: scale(0.97);
+      -moz-transform: scale(0.97);
+      -o-transform: scale(0.97);
+      
+      -ms-transform: transform .2s;
+      -webkit-transform: transform .2s;
+      -moz-transform: transform .2s;
+      -o-transform: transform .2s;
   }
   
   .disabled {
@@ -286,9 +311,16 @@ a:active {
         height: 50%;
         margin: 10em 0;
     }
+    
+    .front, .back {
+        width: 80%;
+    }
 
     .close {
-        padding-right: 6%;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        padding: 0 0 10px;
     }
 
     .modal-content {
@@ -296,7 +328,8 @@ a:active {
     }
 
     .modal-content h4{
-        margin-top: 70px;
+        width: 100%;
+        margin-top: 90px;
         text-align: center;
     }
 
