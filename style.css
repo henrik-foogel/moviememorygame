@@ -3,90 +3,90 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Lobster';
-  }
+}
   
-  body {
-      background-color: black;
-      height: 100vh;
-      font-size: 62.5%;
-  }
-  
-  /* points */
-  .points-time {
-      padding: 3em 0em 0 3em;
-      color: #2ac45a;
-  }
-  
-  .points {
-      font-size: 3em;
-      text-align: center;
-      font-family: 'Lobster';
-      padding-left: 1em;
-      display: flex; 
-  }
-  
-  /* timer */
-  #countdown {
-      position: absolute; 
-      margin: auto;
-      margin-top: 100px;
-      height: 80px;
-      width: 80px;
-      text-align: center;
+body {
+    background-color: black;
+    height: 100vh;
+    font-size: 62.5%;
+}
+
+/* points */
+.points-time {
+    padding: 3em 0em 0 3em;
+    color: #2ac45a;
+}
+
+.points {
+    font-size: 3em;
+    text-align: center;
+    font-family: 'Lobster';
+    padding-left: 1em;
+    display: flex; 
+}
+
+/* timer */
+#countdown {
+    position: absolute; 
+    margin: auto;
+    margin-top: 100px;
+    height: 80px;
+    width: 80px;
+    text-align: center;
+}
+
+#timer {
+    display: inline-block;
+    line-height: 80px;
+    font-size: 40px;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    transform: rotateY(-180deg) rotateZ(-90deg);
+}
+
+svg circle {
+    stroke-dasharray: 223px; 
+    stroke-dashoffset: 0px;
+    stroke-linecap: round;
+    stroke-width: 3px;
+    stroke: white;
+    fill: none;
+    animation: countdown 30s linear infinite forwards;
+}
+
+@keyframes countdown {
+    from {
+    stroke-dashoffset: 0px;
     }
-    
-    #timer {
-      display: inline-block;
-      line-height: 80px;
-      font-size: 40px;
+    to {
+    stroke-dashoffset: 213px;
     }
-    
-    svg {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 80px;
-      height: 80px;
-      transform: rotateY(-180deg) rotateZ(-90deg);
-    }
-    
-    svg circle {
-      stroke-dasharray: 223px; 
-      stroke-dashoffset: 0px;
-      stroke-linecap: round;
-      stroke-width: 3px;
-      stroke: white;
-      fill: none;
-      animation: countdown 30s linear infinite forwards;
-    }
-    
-    @keyframes countdown {
-      from {
-        stroke-dashoffset: 0px;
-      }
-      to {
-        stroke-dashoffset: 213px;
-      }
-    }
-  
-  .memory {
-      width: 640px;
-      height: 640px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      perspective: 1000px;
-  }
-  
-  .container {
-      width: calc(25% - 10px);
-      height: calc(33.333% - 10px);
-      margin: 5px;
-      position: relative;
-      box-shadow: 1px 1px 1px #000000;
-      transform: scale(1);
-      transform-style: preserve-3d;
-      transition: transform .1s;
+}
+/* cards */
+.memory {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+}
+
+.container {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    box-shadow: 1px 1px 1px #000000;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .1s;
 
     -ms-transform: transform .1s;
     -webkit-transform: transform .1s;
@@ -97,50 +97,50 @@
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -o-transform: scale(1);
-  }
-  
-  .container.flip {
-      transform: rotateY(180deg);
+}
 
-      -ms-transform: rotateY(180deg);
-      -webkit-transform: rotateY(180deg);
-      -moz-transform: rotateY(180deg);
-      -o-transform: rotateY(180deg);
-  }
+.container.flip {
+    transform: rotateY(180deg);
+
+    -ms-transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+}
   
-  .container:active {
-      transform: scale(0.97);
-      transition: transform .2s;
-      
-      -ms-transform: scale(0.97);
-      -webkit-transform: scale(0.97);
-      -moz-transform: scale(0.97);
-      -o-transform: scale(0.97);
-      
-      -ms-transform: transform .2s;
-      -webkit-transform: transform .2s;
-      -moz-transform: transform .2s;
-      -o-transform: transform .2s;
-  }
-  
-  .disabled {
-      visibility: hidden;
-  }
-  
-  .front, .back {
+.container:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+    
+    -ms-transform: scale(0.97);
+    -webkit-transform: scale(0.97);
+    -moz-transform: scale(0.97);
+    -o-transform: scale(0.97);
+    
+    -ms-transform: transform .2s;
+    -webkit-transform: transform .2s;
+    -moz-transform: transform .2s;
+    -o-transform: transform .2s;
+}
+
+.disabled {
+    visibility: hidden;
+}
+
+.front, .back {
     width: 100%;
     height: 100%;
     padding: 0px;
     position: absolute;
     border-radius: 5px;
     backface-visibility: hidden;
-  }
-  
-  .front {
-      transform: rotateY(180deg)
-  }
+}
 
-/* testing something */
+.front {
+    transform: rotateY(180deg)
+}
+
+/* result */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -153,35 +153,35 @@
     overflow: auto; /* Enable scroll if needed */
     background-color: #000000; /* Fallback color */
     background-color: #000000; /* Black w/ opacity */
-  }
-  
-  /* Modal Content */
-  .modal-content {
-      font-size: 20px;
+}
+
+/* Modal Content */
+.modal-content {
+    font-size: 20px;
     background-color: #724b86;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
     color: #2ac45a;
-  }
-  
-  /* The Close Button */
-  .close {
+}
+
+/* The Close Button */
+.close {
     color: #2ac45a;
     float: right;
     font-size: 28px;
     font-weight: bold;
     margin: 0 10px 10px;
     padding-top: 15px;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: #3ce682;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
 /* starpage */
 .main-container { /* desktop */
@@ -249,7 +249,7 @@ a:hover {
     }
 }
 @media screen and (max-width: 768px) { /*ipad*/
-    .main-container { /* desktop */
+    .main-container { 
         max-width: 84rem;
         margin: 0 auto;
     }
@@ -282,10 +282,6 @@ a:hover {
         font-family: 'Lobster', cursive;
         transition: all 0.5s ease-in-out; 
     }
-    
-    /* a:hover {
-        background-color: #7253ab;
-    } */
 }
 
 a:link {
@@ -366,8 +362,4 @@ a:active {
         font-family: 'Lobster', cursive;
         transition: all 0.5s ease-in-out; 
     }
-    
-    /* a:hover {
-        background-color: rgb(114, 83, 171);
-    } */
 }
