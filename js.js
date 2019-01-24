@@ -103,18 +103,15 @@ function flippBack () {
         firstC.classList.remove('flip');
         secondC.classList.remove('flip');
         
-cards.forEach(card => card.addEventListener('click', cardFlipper));
+    cards.forEach(card => card.addEventListener('click', cardFlipper));
         reset();
     }, 700);
 } 
 
 // reset cards
 function reset() {
-    //firstC.classList.remove('flip');
     isFlipped = false;
     firstC = null;
     secondC = null;
 }
-// go back
-
 cards.forEach(card => card.addEventListener('click', cardFlipper));
